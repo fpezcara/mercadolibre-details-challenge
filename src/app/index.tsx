@@ -1,5 +1,6 @@
 import React from "react";
 import {
+  useMediaQuery,
   Container,
   Stack,
   Box,
@@ -9,75 +10,75 @@ import {
   StackDivider,
   Text,
 } from "@chakra-ui/react";
-
 import { AiOutlineSearch, AiOutlineShoppingCart } from "react-icons/ai";
 import { GiReceiveMoney } from "react-icons/gi";
 import { GoLocation } from "react-icons/go";
 import { FiChevronDown } from "react-icons/fi";
 
-import Routes from "./routes";
-
 import logo from "../assets/logo.png";
 
+import Routes from "./routes";
+
 const App: React.FC = () => {
+  const [isSmallerThan1024] = useMediaQuery("(min-width: 1024)");
+
+
   return (
-    <Stack>
-      <Box bg="primary.500" paddingY={3} boxShadow="sm">
-        <Container maxWidth="container.xl">
+    <Stack bg="blackAlpha.200">
+      <Box bg="primary.500" boxShadow="sm" direction={{ base: "column", lg: "row" }} paddingY={3}>
+        <Container maxWidth={{ base: "container.sm", md: "container.xl" }}>
           <Stack spacing={3}>
             <Stack direction="row" justify="space-between">
               <Stack direction="row" flex={1} spacing={12}>
-                <Image objectFit="contain" src={logo} minWidth={150} />
+                <Image minWidth={150} objectFit="contain" src={logo} />
+
                 <Stack
-                  direction="row"
-                  divider={<StackDivider />}
                   align="center"
                   bg="white"
-                  shadow="sm"
                   borderRadius="sm"
+                  direction="row"
+                  divider={<StackDivider />}
+                  flex={1}
                   maxWidth={600}
-                  w="100%"
                   padding={2}
+                  shadow="sm"
+                  w="100%"
                 >
                   <Input
-                    placeholder="Buscar productos, marcas y más..."
                     paddingX={2}
+                    placeholder="Buscar productos, marcas y más..."
                     variant="unstyled"
+                    // w={{ base: "100%" }}
                   />
-                  <Icon as={AiOutlineSearch} w={5} h={5} color="gray.500" />
+                  <Icon as={AiOutlineSearch} color="gray.500" h={5} w={5} />
                 </Stack>
               </Stack>
-              <Stack direction="row" color="blackAlpha.700" fontSize="lg">
-                <Icon as={GiReceiveMoney} w={6} h={6} />
+
+              <Stack
+                color="blackAlpha.700"
+                direction="row"
+                // display={{ base: "none", lg: "inline" }}
+                fontSize="lg"
+              >
+                <Icon as={GiReceiveMoney} h={6} w={6} />
                 <Text>Comprá ahora y pagá después </Text>
               </Stack>
             </Stack>
 
-            <Stack
-              direction="row"
-              spacing={14}
-              justify="space-between"
-              align="baseline"
-            >
-              <Stack direction="row" minWidth={150} spacing={1} align="center">
-                <Icon as={GoLocation} w={6} h={6} color="blackAlpha.600" />
-                <Stack spacing={0} flex={1} lineHeight={1}>
-                  <Text fontSize="xs" color="blackAlpha.600">
+            <Stack align="baseline" direction="row" justify="space-between" spacing={14}>
+              <Stack align="center" direction="row" minWidth={150} spacing={1}>
+                <Icon as={GoLocation} color="blackAlpha.600" h={6} w={6} />
+                <Stack flex={1} lineHeight={1} spacing={0}>
+                  <Text color="blackAlpha.600" fontSize="xs">
                     Enviar a
                   </Text>
-                  <Text fontSize="sm" color="blackAlpha.700">
+                  <Text color="blackAlpha.700" fontSize="sm">
                     Capital Federal
                   </Text>
                 </Stack>
               </Stack>
-              <Stack
-                direction="row"
-                fontSize="sm"
-                color="blackAlpha.600"
-                flex={1}
-                spacing={5}
-              >
-                <Stack direction="row" spacing={1} align="end">
+              <Stack color="blackAlpha.600" direction="row" flex={1} fontSize="sm" spacing={5}>
+                <Stack align="end" direction="row" spacing={1}>
                   <Text>Categorías</Text>
                   <Icon as={FiChevronDown} color="blackAlpha.300" />
                 </Stack>
@@ -88,20 +89,18 @@ const App: React.FC = () => {
                 <Text>Vender</Text>
                 <Text>Ayuda</Text>
               </Stack>
-              <Stack
-                direction="row"
-                fontSize="sm"
-                color="blackAlpha.700"
-                spacing={6}
-              >
+              <Stack color="blackAlpha.700" direction="row" fontSize="sm" spacing={6}>
                 <Text>Creá tu cuenta</Text>
                 <Text>Ingresá</Text>
                 <Text>Mis compras</Text>
-                <Icon as={AiOutlineShoppingCart} w={5} h={5} />
+                <Icon as={AiOutlineShoppingCart} h={5} w={5} />
               </Stack>
             </Stack>
           </Stack>
         </Container>
+      </Box>
+      <Box>
+        <Routes />
       </Box>
     </Stack>
   );
