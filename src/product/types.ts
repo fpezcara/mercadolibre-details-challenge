@@ -12,4 +12,3 @@ export interface Product extends Record<string, any> {
   condition: string;
   pictures: ProductPicture[];
 }
-

@@ -25,7 +25,7 @@ module.exports = {
     },
   },
   rules: {
-    "no-console": "detect",
+    // "no-console": "warn",
     "react/prop-types": "off",
     "prettier/prettier": [
       "error",

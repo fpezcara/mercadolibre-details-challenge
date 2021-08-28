@@ -3,8 +3,6 @@ import { Image, Container, Stack } from "@chakra-ui/react";
 
 import { ProductPicture } from "../types";
 
-
-
 interface Props {
   pictures: ProductPicture[];
   title: string;
@@ -15,6 +13,7 @@ const PictureCarousel: React.FC<Props> = ({ pictures, title }) => {
     url: pictures[0].url,
   });
 
+  // const [hola] = useFalse( );
 
   return (
     <Container margin={0} maxW="container.xl" padding={0}>
@@ -23,7 +22,6 @@ const PictureCarousel: React.FC<Props> = ({ pictures, title }) => {
           {pictures.map(({ id, url }: ProductPicture) => (
             <Stack
               key={id}
-              bg={id === selectedPicture.id ? "gray.100" : "whiteAlpha.100"}
               borderColor={id === selectedPicture.id ? "#3483fa" : "blackAlpha.500"}
               borderRadius={3}
               borderWidth={id === selectedPicture.id ? "2px" : "1px"}
