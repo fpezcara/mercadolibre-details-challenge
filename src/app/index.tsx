@@ -26,15 +26,21 @@ const App: React.FC = () => {
   const displayLogo = useBreakpointValue({ base: responsiveLogo, lg: logo });
 
   return (
-    <Stack bg="blackAlpha.200" minW={{ base: "1150" }}>
-      <Box bg="primary.500" boxShadow="base" direction={{ base: "column", lg: "row" }} py="2">
+    <Stack bg="blackAlpha.200" minW={{ base: "1200" }}>
+      <Box
+        bg="primary.500"
+        boxShadow="base"
+        direction={{ base: "column", lg: "row" }}
+        me={{ base: "4" }}
+        py="2"
+      >
         <Container minW="container.xl" px={{ md: "0", lg: 3 }}>
           <Stack
             divider={
               <StackDivider
                 borderColor="blackAlpha.200"
                 display={{ base: "block", lg: "none" }}
-                maxW="1150"
+                maxW="1185"
               />
             }
           >
@@ -47,9 +53,9 @@ const App: React.FC = () => {
                   bg="white"
                   borderRadius="sm"
                   direction={{ base: "row-reverse", lg: "row" }}
-                  divider={<StackDivider d={{ base: "none", lg: "block" }} />}
-                  flex={1}
-                  minWidth={{ base: "1000", lg: "600" }}
+                  divider={<StackDivider align="stretch" d={{ base: "none", lg: "block" }} />}
+                  // flex={1}
+                  minWidth={{ base: "1030", lg: "600" }}
                   padding={{ base: "1", lg: "1.5" }}
                   shadow="md"
                 >
@@ -72,7 +78,7 @@ const App: React.FC = () => {
                 <Icon as={GiReceiveMoney} boxSize={6} />
                 <Text>Comprá ahora y pagá después </Text>
               </Stack>
-              <Stack direction="row" display={{ lg: "none" }} px="2" spacing={3}>
+              <Stack direction="row" display={{ lg: "none" }} px="2" spacing={5}>
                 <Icon as={CgMenu} boxSize={6} color="blackAlpha.600" />
                 <Icon as={AiOutlineShoppingCart} boxSize={6} color="blackAlpha.600" />
               </Stack>
