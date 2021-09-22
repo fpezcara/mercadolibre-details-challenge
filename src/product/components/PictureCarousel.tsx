@@ -13,8 +13,6 @@ const PictureCarousel: React.FC<Props> = ({ pictures, title }) => {
     url: pictures[0].url,
   });
 
-  // const [hola] = useFalse( );
-
   return (
     <Container margin={0} maxW="container.xl" padding={0}>
       <Stack direction="row" spacing={14}>
@@ -22,7 +20,7 @@ const PictureCarousel: React.FC<Props> = ({ pictures, title }) => {
           {pictures.map(({ id, url }: ProductPicture) => (
             <Stack
               key={id}
-              borderColor={id === selectedPicture.id ? "#3483fa" : "blackAlpha.500"}
+              borderColor={id === selectedPicture.id ? "secondary.400" : "blackAlpha.500"}
               borderRadius={3}
               borderWidth={id === selectedPicture.id ? "2px" : "1px"}
               padding="1px"

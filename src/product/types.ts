@@ -22,7 +22,3 @@ export interface Question {
 export interface State {
   questions: Question[];
 }
-
-// export interface Actions {
-//   saveQuestions: (question: Question) => void;
-// }

@@ -1,10 +1,10 @@
 import React from "react";
 import { Box, Button, Container, Stack, StackDivider, Heading, Text } from "@chakra-ui/react";
 
-import { Product } from "../types";
+import { Product, State } from "../types";
 import mock from "../mock";
 import PictureCarousel from "../components/PictureCarousel";
-import InquiriesComponent from "../components/QuestionsComponent";
+import QuestionsComponent from "../components/QuestionsComponent";
 
 const DetailsScreen: React.FC<Product> = ({ product = mock.product }) => {
   const { pictures, title, price, attributes, id, currency_id, sold_quantity, descriptions } =
@@ -29,19 +29,21 @@ const DetailsScreen: React.FC<Product> = ({ product = mock.product }) => {
             <Stack direction="row" mb="4" p="3">
               <PictureCarousel pictures={pictures} title={title} />
             </Stack>
-            <Stack direction="column" p="5" spacing="8">
-              <Stack>
-                <Text as="p" fontSize="2xl">
-                  Descripción
-                </Text>
-                <Text as="p" color="blackAlpha.700" fontSize="xl">
-                  {descriptions[0].text}
-                </Text>
+            <Container maxW="container.xl">
+              <Stack direction="column" p="5" spacing="8">
+                <Stack>
+                  <Text as="p" fontSize="2xl">
+                    Descripción
+                  </Text>
+                  <Text as="p" color="blackAlpha.700" fontSize="xl">
+                    {descriptions[0].text}
+                  </Text>
+                </Stack>
+                <Stack>
+                  <QuestionsComponent />
+                </Stack>
               </Stack>
-              <Stack>
-                <InquiriesComponent />
-              </Stack>
-            </Stack>
+            </Container>
           </Stack>
 
           {/* ProductDetails */}
