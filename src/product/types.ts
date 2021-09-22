@@ -13,3 +13,16 @@ export interface Product extends Record<string, any> {
   pictures: ProductPicture[];
   description: string;
 }
+
+export interface Question {
+  id: string;
+  text: string;
+}
+
+export interface State {
+  questions: Question[];
+}
+
+// export interface Actions {
+//   saveQuestions: (question: Question) => void;
+// }
