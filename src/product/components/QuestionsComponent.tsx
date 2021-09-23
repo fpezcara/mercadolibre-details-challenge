@@ -25,7 +25,7 @@ const QuestionsComponent: React.FC = () => {
       </Stack>
       <FormControl id="question" pb="4">
         <FormLabel fontSize="lg">Preguntale al vendedor</FormLabel>
-        <Stack direction="row" justify="space-between">
+        <Stack direction="row" justify="space-between" pt="2">
           <Input
             boxShadow="sm"
             flex="1"
@@ -56,7 +56,7 @@ const QuestionsComponent: React.FC = () => {
               Últimas realizadas
             </Text>
             {questions.map((question: Question) => (
-              <Text key={question.id} as="p" fontSize="lg">
+              <Text key={question.id} as="p" fontSize="md">
                 {question.text}
               </Text>
             ))}

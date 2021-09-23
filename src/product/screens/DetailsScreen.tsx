@@ -1,7 +1,7 @@
 import React from "react";
 import { Box, Button, Container, Stack, StackDivider, Heading, Text } from "@chakra-ui/react";
 
-import { Product, State } from "../types";
+import { Product } from "../types";
 import mock from "../mock";
 import PictureCarousel from "../components/PictureCarousel";
 import QuestionsComponent from "../components/QuestionsComponent";
