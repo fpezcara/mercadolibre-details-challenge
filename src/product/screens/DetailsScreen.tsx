@@ -1,14 +1,20 @@
 import React from "react";
-import { Box, Button, Container, Stack, StackDivider, Heading, Text } from "@chakra-ui/react";
+import { Button, Container, Stack, StackDivider, Heading, Text, Divider } from "@chakra-ui/react";
 
 import { Product } from "../types";
 import mock from "../mock";
 import PictureCarousel from "../components/PictureCarousel";
 import QuestionsComponent from "../components/QuestionsComponent";
 
-const DetailsScreen: React.FC<Product> = ({ product = mock.product }) => {
-  const { pictures, title, price, attributes, id, currency_id, sold_quantity, descriptions } =
+interface Props {
+  product: Product;
+}
+
+const DetailsScreen: React.FC<Props> = ({ product = mock.product }) => {
+  const { pictures, price, title, id, currency_id, sold_quantity, condition, descriptions } =
     product;
+
+  const { text: description } = descriptions[0];
 
   return (
     <Stack minW={{ base: "1200" }}>
@@ -22,26 +28,36 @@ const DetailsScreen: React.FC<Product> = ({ product = mock.product }) => {
           id={id}
           justify={{ base: "flex-start" }}
         >
-          <Stack
-            divider={<StackDivider alignSelf="center" borderColor="blackAlpha.300" w="3xl" />}
-            margin="1"
-          >
+          <Stack margin="1">
             <Stack direction="row" mb="4" p="3">
               <PictureCarousel pictures={pictures} title={title} />
             </Stack>
             <Container maxW="container.xl">
-              <Stack direction="column" p="5" spacing="8">
-                <Stack>
-                  <Text as="p" fontSize="2xl">
-                    Descripción
-                  </Text>
-                  <Text as="p" color="blackAlpha.700" fontSize="xl">
-                    {descriptions[0].text}
-                  </Text>
-                </Stack>
-                <Stack>
-                  <QuestionsComponent />
-                </Stack>
+              <Stack alignItems="center">
+                <Divider
+                  border="sm"
+                  borderColor="blackAlpha.300"
+                  boxShadow="2xl"
+                  flex={1}
+                  justifySelf="center"
+                  m="5"
+                  w="90%"
+                />
+                <Container maxW="container.xl">
+                  <Stack direction="column" p="5" spacing="8">
+                    <Stack spacing="5">
+                      <Heading as="h2" fontSize="24px" fontWeight="xl">
+                        Descripción
+                      </Heading>
+                      <Text as="p" color="blackAlpha.700" fontSize="xl">
+                        {description}
+                      </Text>
+                    </Stack>
+                    <Stack>
+                      <QuestionsComponent />
+                    </Stack>
+                  </Stack>
+                </Container>
               </Stack>
             </Container>
           </Stack>
@@ -77,7 +93,9 @@ const DetailsScreen: React.FC<Product> = ({ product = mock.product }) => {
                   maxH="15px"
                   maxWidth="140px"
                 >
-                  <Text as="p">{attributes[9].value_name}</Text>
+                  <Text as="p" textTransform="capitalize">
+                    {condition}
+                  </Text>
                   <Text as="p">{sold_quantity} vendidos</Text>
                 </Stack>
                 <Stack maxW="300">

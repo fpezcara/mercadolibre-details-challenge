@@ -8,10 +8,10 @@
     "theme": "chakra-cli tokens ./src/theme.ts"
   },
   "dependencies": {
-    "@chakra-ui/react": "^1.5.2",
-    "@emotion/react": "^11.1.5",
+    "@chakra-ui/react": "^1.6.8",
+    "@emotion/react": "^11.4.1",
     "@emotion/styled": "^11.3.0",
-    "framer-motion": "^4.1.8",
+    "framer-motion": "^4.1.17",
     "jshint": "^2.13.1",
     "react": "^17.0.0",
     "react-dom": "^17.0.0",

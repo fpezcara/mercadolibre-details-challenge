@@ -9,16 +9,19 @@ export interface Product extends Record<string, any> {
   price: number;
   currency_id: string;
   sold_quantity: number;
-  condition: string;
   pictures: ProductPicture[];
-  description: string;
+  condition: string;
+  descriptions: Array<{
+    id?: string;
+    text: string;
+  }>;
 }
 
-export interface Question {
-  id: string;
-  text: string;
-}
+// export interface Question {
+//   id: string;
+//   text: string;
+// }
 
-export interface State {
-  questions: Question[];
-}
+// export interface State {
+//   questions: Question[];
+// }

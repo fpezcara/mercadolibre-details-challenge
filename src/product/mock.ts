@@ -79,7 +79,7 @@ export default {
           
           REALIZAMOS ENVÍOS A TODO EL PAÍS Y HACEMOS ENVÍOS A DOMICILIO POR MOTOMENSAJERÍA.
           
-          *****NO SE OLVIDE DE VISITAR TODOS NUESTROS PRODUCTOS*****`
+          *****NO SE OLVIDE DE VISITAR TODOS NUESTROS PRODUCTOS*****`,
         },
       ],
       accepts_mercadopago: true,

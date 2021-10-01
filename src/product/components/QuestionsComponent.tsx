@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { Stack, Text, Input, Button, FormControl, FormLabel } from "@chakra-ui/react";
 
-import { Question, State } from "../types";
+import { Question, State } from "./types";
 
 const QuestionsComponent: React.FC = () => {
   const [newQuestion, setNewQuestion] = useState<Question>({ id: "", text: "" });
