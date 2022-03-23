@@ -16,12 +16,3 @@ export interface Product extends Record<string, any> {
     text: string;
   }>;
 }
-
-// export interface Question {
-//   id: string;
-//   text: string;
-// }
-
-// export interface State {
-//   questions: Question[];
-// }

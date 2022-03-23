@@ -63,7 +63,7 @@ export default {
         },
       ],
       video_id: null,
-      descriptions: [
+      npm: [
         {
           id: "MLA741093357-1768858232",
           text: `PELUCHE STITCH 1 METRO - 100 CM + ENVIO GRATIS POR CORREO ARGENTINO!!!

@@ -1,5 +1,5 @@
 import React from "react";
-import { Button, Container, Stack, StackDivider, Heading, Text, Divider } from "@chakra-ui/react";
+import { Button, Container, Stack, StackDivider, Heading, Text } from "@chakra-ui/react";
 
 import { Product } from "../types";
 import mock from "../mock";
@@ -28,36 +28,26 @@ const DetailsScreen: React.FC<Props> = ({ product = mock.product }) => {
           id={id}
           justify={{ base: "flex-start" }}
         >
-          <Stack margin="1">
+          <Stack
+            divider={<StackDivider alignSelf="center" borderColor="blackAlpha.300" w="3xl" />}
+            margin="1"
+          >
             <Stack direction="row" mb="4" p="3">
               <PictureCarousel pictures={pictures} title={title} />
             </Stack>
             <Container maxW="container.xl">
-              <Stack alignItems="center">
-                <Divider
-                  border="sm"
-                  borderColor="blackAlpha.300"
-                  boxShadow="2xl"
-                  flex={1}
-                  justifySelf="center"
-                  m="5"
-                  w="90%"
-                />
-                <Container maxW="container.xl">
-                  <Stack direction="column" p="5" spacing="8">
-                    <Stack spacing="5">
-                      <Heading as="h2" fontSize="24px" fontWeight="xl">
-                        Descripción
-                      </Heading>
-                      <Text as="p" color="blackAlpha.700" fontSize="xl">
-                        {description}
-                      </Text>
-                    </Stack>
-                    <Stack>
-                      <QuestionsComponent />
-                    </Stack>
-                  </Stack>
-                </Container>
+              <Stack direction="column" p="5" spacing="8">
+                <Stack>
+                  <Text as="p" fontSize="2xl">
+                    Descripción
+                  </Text>
+                  <Text as="p" color="blackAlpha.700" fontSize="xl">
+                    {description}
+                  </Text>
+                </Stack>
+                <Stack>
+                  <QuestionsComponent />
+                </Stack>
               </Stack>
             </Container>
           </Stack>

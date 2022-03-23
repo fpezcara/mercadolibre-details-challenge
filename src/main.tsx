@@ -10,12 +10,12 @@ import theme from "./theme";
 ReactDOM.render(
   <>
     <ColorModeScript initialColorMode={theme.config.initialColorMode} />
-    <BrowserRouter>
-      <ChakraProvider theme={theme}>
+    <ChakraProvider theme={theme}>
+      <BrowserRouter>
         <Fonts />
         <App />
-      </ChakraProvider>
-    </BrowserRouter>
+      </BrowserRouter>
+    </ChakraProvider>
   </>,
   document.getElementById("root"),
 );

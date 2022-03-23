@@ -13,8 +13,6 @@ const PictureCarousel: React.FC<Props> = ({ pictures, title }) => {
     url: pictures[0].url,
   });
 
-  console.log(pictures);
-
   return (
     <Container margin={0} maxW="container.xl" padding={0}>
       <Stack direction="row" spacing={14}>

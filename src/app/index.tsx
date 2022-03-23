@@ -55,6 +55,7 @@ const App: React.FC = () => {
                   direction={{ base: "row-reverse", lg: "row" }}
                   divider={<StackDivider align="stretch" d={{ base: "none", lg: "block" }} />}
                   // flex={1}
+                  fontFamily="Proxima Nova"
                   minWidth={{ base: "1030", lg: "600" }}
                   padding={{ base: "1", lg: "1.5" }}
                   shadow="md"
