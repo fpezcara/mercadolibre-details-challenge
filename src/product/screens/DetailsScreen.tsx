@@ -16,6 +16,9 @@ const DetailsScreen: React.FC<Props> = ({ product = mock.product }) => {
 
   const { text: description } = descriptions[0];
 
+  console.log("estoy EN details COMPONENT");
+  console.log(product);
+
   return (
     <Stack minW={{ base: "1200" }}>
       <Container minW="container.xl" pe={{ base: "4" }} px={{ base: "0", lg: "2" }} py={16}>
